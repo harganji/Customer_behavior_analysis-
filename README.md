@@ -1,167 +1,126 @@
 # Customer Shopping Behavior Analysis
 
-An end-to-end retail analytics project that turns raw customer shopping data into business recommendations using Python, MySQL, SQL analytics, customer segmentation, machine learning, and a Power BI dashboard design.
+End-to-end retail analytics project using Python, MySQL, advanced SQL, Tableau-ready dashboard assets, Power BI planning, customer segmentation, and machine learning.
 
-## Project Objective
+## Portfolio Summary
 
-Retail teams often know what customers purchased, but not which behaviors should drive retention, promotion, and merchandising decisions. This project analyzes customer shopping behavior to identify revenue drivers, estimate customer value, detect churn-risk signals, evaluate discount effectiveness, and recommend targeted business actions.
+This project analyzes 3,900 customer shopping records to identify revenue drivers, customer value patterns, churn-risk signals, discount effectiveness, and product/seasonal opportunities. The goal is to move beyond basic EDA and show how customer behavior data can support marketing, retention, merchandising, and executive decision-making.
 
-## Business Questions
+## Business Problem
+
+Retail teams often know what customers bought, but not which customers are most valuable, which behaviors indicate retention risk, or whether discounts are actually improving performance. This project answers those questions through data cleaning, SQL analysis, segmentation, dashboarding, and predictive modeling.
+
+## Key Questions Answered
 
 - Which customer groups generate the most revenue?
 - Which product categories and seasons should receive campaign focus?
-- Which customers show high estimated lifetime value?
-- Which customers are at risk of churn based on subscription status, purchase frequency, and purchase history?
-- Do discounts improve customer value, or do they reduce margin without lifting order value?
+- Which customers have stronger estimated lifetime value?
+- Which customers are at risk because they are non-subscribers and purchase infrequently?
+- Are discounts increasing customer quality or reducing margin without lifting order value?
 - Which customer segments should receive loyalty, cross-sell, or win-back campaigns?
-
-## Dataset
-
-The dataset contains 3,900 customer shopping records with fields such as customer demographics, purchased item, category, purchase amount, location, season, review rating, subscription status, discount usage, previous purchases, payment method, and purchase frequency.
 
 ## Tools Used
 
-- Python: data cleaning, feature engineering, EDA, correlation analysis, machine learning
-- Pandas and NumPy: data transformation
-- Scikit-learn: RandomForest classification and regression models
-- MySQL: cleaned data storage and SQL analysis
-- SQL: CTEs, window functions, RFM segmentation, cohort-style analysis
-- Tableau: dashboard workbook starter and visual dashboard assets
-- Power BI: dashboard structure and KPI design for future `.pbix` creation
-- GitHub: portfolio documentation and project storytelling
+- Python, Pandas, NumPy
+- MySQL and advanced SQL
+- Scikit-learn
+- Tableau starter workbook and dashboard assets
+- Power BI dashboard planning for future `.pbix` creation
+- HTML dashboard preview for GitHub
 
-Reference learning resource:
-[YouTube - Customer Shopping Behavior Analysis walkthrough](https://www.youtube.com/watch?v=5PrZvPeUw60&t=1700s)
+## Files Included
 
-## Repository Structure
-
-```text
-customer-shopping-behavior-analysis/
-  data/
-    customer_shopping_behavior.csv
-  sql/
-    mysql_load_cleaned_data.sql
-    advanced_customer_behavior_analysis.sql
-  src/
-    advanced_customer_analysis.py
-  dashboard/
-    power_bi_dashboard_blueprint.md
-  docs/
-    business_problem_and_story.md
-    business_recommendations.md
-    final_project_summary.md
-  outputs/
-    generated analysis outputs
-  README.md
-  requirements.txt
-```
+| File | Purpose |
+| --- | --- |
+| `customer_shopping_behavior.csv` | Source dataset |
+| `advanced_customer_analysis.py` | Python cleaning, feature engineering, analysis, and ML |
+| `advanced_customer_behavior_analysis.sql` | Advanced SQL analysis queries |
+| `mysql_load_cleaned_data.sql` | MySQL validation/loading helper |
+| `customer_shopping_dashboard.png` | Dashboard image preview |
+| `customer_shopping_dashboard.html` | Browser-viewable dashboard preview |
+| `customer_shopping_tableau_starter.twb` | Tableau starter workbook |
+| `customer_shopping_dashboard_data.csv` | Dashboard-ready cleaned data |
+| `power_bi_dashboard_blueprint.md` | Power BI dashboard design plan |
+| `power_bi_pbix_creation_steps.md` | Steps to create the `.pbix` in Power BI Desktop |
+| `visualization_guide_powerbi_tableau.md` | Power BI/Tableau build guide |
+| `business_problem_and_story.md` | Business framing and story |
+| `business_recommendations.md` | Actionable recommendations |
+| `final_project_summary.md` | Interview-ready project summary |
+| `gender_revenue.csv`, `category_insights.csv`, `discount_impact.csv`, `rfm_segment_summary.csv`, `correlation_matrix.csv` | Output tables |
+| `model_results.txt` | Machine learning model results |
 
 ## Data Preparation
 
-The Python workflow performs the following cleaning and transformation steps:
+The Python workflow performs these steps:
 
-- Standardizes column names for SQL compatibility
-- Imputes missing review ratings using category-level medians
-- Removes duplicate promotional fields where discount and promo behavior are equivalent
-- Creates age groups using quantiles
-- Maps purchase frequency into estimated days between purchases
-- Engineers estimated annual orders
-- Creates an estimated customer lifetime value proxy
-- Creates RFM scores and customer segments
-- Flags churn-risk customers using behavioral rules
+- Standardized column names for SQL compatibility
+- Imputed missing review ratings using category-level medians
+- Removed duplicate promotional fields where discount and promo usage were equivalent
+- Created age groups using quantiles
+- Mapped purchase frequency into estimated days between purchases
+- Engineered estimated annual orders and estimated CLV
+- Created RFM scores and customer segments
+- Flagged churn-risk customers using behavioral rules
 
-## Advanced Analytics
+## Advanced SQL Analysis
 
-### SQL Analysis
-
-The SQL analysis includes:
+The SQL work includes:
 
 - Revenue by gender, category, season, location, and payment method
-- Window functions for ranking categories, items, and locations
-- RFM customer segmentation using NTILE
+- Window functions for category, item, and location rankings
+- RFM segmentation using `NTILE`
 - CLV proxy analysis by age group and gender
 - Discount impact analysis
 - Churn-risk proxy analysis
 - Cohort-style behavior by age group and purchase frequency
 - Subscription conversion opportunity list
 
-SQL file:
-[sql/advanced_customer_behavior_analysis.sql](sql/advanced_customer_behavior_analysis.sql)
-
-### Python Analysis
+## Python and Machine Learning
 
 The Python analysis includes:
 
 - Feature engineering
 - Business summary tables
-- Correlation matrix
+- Correlation analysis
 - RFM segmentation
 - Estimated CLV analysis
 - RandomForest classifier for high-value customer prediction
-- RandomForest regressor for purchase amount prediction
+- RandomForest regressor for purchase amount estimation
 
-Python file:
-[src/advanced_customer_analysis.py](src/advanced_customer_analysis.py)
+Model results:
+
+- High-value customer classifier ROC AUC: `0.884`
+- Purchase amount model MAE: `$20.78`
+
+## Dashboard and Visualization
+
+This repository includes Tableau-ready dashboard assets and an HTML/PNG dashboard preview. A Power BI `.pbix` can be created from the included dashboard data and the Power BI guide, but the repository currently includes the Tableau starter workbook and visual preview files.
+
+Dashboard preview files:
+
+- [Customer Shopping Dashboard PNG](customer_shopping_dashboard.png)
+- [Customer Shopping Dashboard HTML](customer_shopping_dashboard.html)
+- [Tableau Starter Workbook](customer_shopping_tableau_starter.twb)
+- [Dashboard Data CSV](customer_shopping_dashboard_data.csv)
+- [Power BI PBIX Creation Steps](power_bi_pbix_creation_steps.md)
 
 ## Key Findings
 
-- Total revenue in the dataset is $233,081.
-- Male customers generated $157,890 in revenue, while female customers generated $75,191.
-- Clothing is the largest revenue category, generating $104,264.
-- Accessories is the second-largest category and is a strong cross-sell opportunity.
-- Subscribers have higher estimated CLV than non-subscribers, even though their average order value is similar.
-- Discounted customers do not show a meaningful lift in average order value, which suggests discounts should be targeted rather than broad.
-- Fall generated the highest seasonal revenue at $60,018.
-- Power customers show the highest estimated CLV and should receive loyalty-focused campaigns.
+- Total revenue: `$233,081`
+- Male customers generated `$157,890`; female customers generated `$75,191`
+- Clothing is the largest revenue category at `$104,264`
+- Accessories is the second-largest category and a strong cross-sell opportunity
+- Subscribers show higher estimated CLV than non-subscribers despite similar AOV
+- Discounted customers do not show a meaningful lift in AOV
+- Fall generated the highest seasonal revenue at `$60,018`
 
 ## Business Recommendations
 
-1. Target discounts only to at-risk and low-engagement customers.
-   Broad discounting does not materially increase average order value, so offers should be used to reactivate or retain customers instead of subsidizing purchases that may already happen.
-
-2. Convert high-value non-subscribers.
-   Non-subscribers with strong purchase history should receive subscription offers tied to benefits such as free shipping, early access, or loyalty points.
-
-3. Use Clothing as the revenue anchor and Accessories as the cross-sell engine.
-   Clothing generates the most revenue, while Accessories offers a strong add-on path for basket expansion.
-
-4. Build lifecycle campaigns around purchase frequency.
-   Customers with quarterly or annual purchase patterns should receive reminders before their expected repurchase window.
-
-5. Personalize campaigns by RFM segment.
-   Champions should receive exclusive access, Loyal Growth customers should receive cross-sell and subscription offers, At Risk customers should receive win-back campaigns, and Low Engagement customers should receive low-cost reactivation tests.
-
-## Dashboard and Visualization Work
-
-For visualization, I created Tableau-ready dashboard assets and a visual dashboard preview for GitHub. I also included a complete Power BI dashboard plan with KPIs, DAX measures, and page structure. A `.pbix` file can be created from the included dataset and Power BI guide, but this repository currently focuses on the Tableau starter workbook and dashboard preview files.
-
-The dashboard is designed as a four-page executive analytics product:
-
-1. Executive Overview
-   Revenue, customers, AOV, subscriber rate, category mix, gender revenue, seasonality, and location performance.
-
-2. Customer Segmentation and CLV
-   RFM segments, estimated CLV, top high-value customers, and customer quality by age group.
-
-3. Product and Seasonal Performance
-   Category revenue, top items, category-season heatmap, and product-level merchandising insights.
-
-4. Discount, Churn, and Retention
-   Discount impact, churn-risk customers, revenue at risk, and subscription conversion opportunities.
-
-Dashboard blueprint:
-[dashboard/power_bi_dashboard_blueprint.md](dashboard/power_bi_dashboard_blueprint.md)
-
-Power BI and Tableau visualization guide:
-[dashboard/visualization_guide_powerbi_tableau.md](dashboard/visualization_guide_powerbi_tableau.md)
-
-Dashboard files included:
-
-- [dashboard/customer_shopping_dashboard.png](dashboard/customer_shopping_dashboard.png)
-- [dashboard/customer_shopping_dashboard.html](dashboard/customer_shopping_dashboard.html)
-- [dashboard/customer_shopping_tableau_starter.twb](dashboard/customer_shopping_tableau_starter.twb)
-- [dashboard/customer_shopping_dashboard_data.csv](dashboard/customer_shopping_dashboard_data.csv)
-- [dashboard/power_bi_pbix_creation_steps.md](dashboard/power_bi_pbix_creation_steps.md)
+1. Target discounts only to at-risk and low-engagement customers instead of using blanket promotions.
+2. Convert high-value non-subscribers with benefits such as free shipping, loyalty points, or early access.
+3. Use Clothing as the revenue anchor and Accessories as the cross-sell category.
+4. Build lifecycle campaigns around expected repurchase frequency.
+5. Personalize messaging by RFM segment: Champions, Loyal Growth, At Risk, and Low Engagement.
 
 ## How to Run
 
@@ -174,7 +133,7 @@ pip install -r requirements.txt
 Run the Python analysis:
 
 ```bash
-python src/advanced_customer_analysis.py
+python advanced_customer_analysis.py
 ```
 
 Run the SQL analysis in MySQL Workbench after loading the cleaned data into:
@@ -185,8 +144,6 @@ customer_behavior.customer_data
 
 ## Interview Story
 
-I started with a raw shopping behavior dataset and reframed it as a retail decision problem: how can the business increase customer value, reduce churn risk, and improve campaign targeting? I cleaned and engineered the data in Python, loaded it into MySQL, used SQL for business analysis and segmentation, created Tableau-ready visualization assets, planned a Power BI dashboard, and added a machine learning layer to predict high-value customers. The final output is not just an EDA notebook, but a business analytics project that connects analysis to action.
+I started with raw customer shopping behavior data and reframed it as a retail decision problem: how can the business increase customer value, reduce churn risk, and improve campaign targeting? I cleaned and engineered the data in Python, loaded it into MySQL, used SQL for segmentation and business analysis, created Tableau-ready visualization assets, planned a Power BI dashboard, and added a machine learning layer to predict high-value customers.
 
-## Project Outcome
-
-This project demonstrates the ability to move from data cleaning to executive insight. It shows technical depth through SQL window functions, Python feature engineering, segmentation, and ML, while also presenting findings in a business-ready format for decision-makers.
+The final output is a complete analytics case study that connects data preparation, SQL, Python, visualization, and business recommendations.
