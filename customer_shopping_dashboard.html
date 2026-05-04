@@ -1,0 +1,180 @@
+
+    <!doctype html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Customer Shopping Dashboard</title>
+      <style>
+        body { font-family: Arial, sans-serif; margin: 32px; color: #1f2933; background: #f7f9fb; }
+        h1 { margin-bottom: 8px; }
+        .subtitle { color: #52606d; margin-bottom: 24px; }
+        .cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 24px; }
+        .card { background: white; border: 1px solid #d9e2ec; padding: 18px; border-radius: 8px; }
+        .card span { display: block; color: #52606d; font-size: 13px; }
+        .card strong { display: block; font-size: 24px; margin-top: 8px; }
+        img { max-width: 100%; border: 1px solid #d9e2ec; border-radius: 8px; background: white; }
+        section { background: white; border: 1px solid #d9e2ec; border-radius: 8px; padding: 18px; margin-top: 18px; }
+        .data-table { border-collapse: collapse; width: 100%; }
+        .data-table th, .data-table td { border-bottom: 1px solid #e5e7eb; padding: 8px; text-align: left; }
+      </style>
+    </head>
+    <body>
+      <h1>Customer Shopping Behavior Dashboard</h1>
+      <p class="subtitle">Revenue, segmentation, discount impact, and retention overview.</p>
+      
+    <div class="cards">
+      <div class="card"><span>Total Revenue</span><strong>$233,081</strong></div>
+      <div class="card"><span>Customers</span><strong>3,900</strong></div>
+      <div class="card"><span>Average Order Value</span><strong>$59.76</strong></div>
+      <div class="card"><span>Subscriber Rate</span><strong>27.0%</strong></div>
+      <div class="card"><span>Churn-Risk Customers</span><strong>639</strong></div>
+    </div>
+    
+      <img src="customer_shopping_dashboard.png" alt="Customer shopping dashboard">
+      <section><h2>Revenue by Gender</h2><table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>gender</th>
+      <th>purchase_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Female</td>
+      <td>75191</td>
+    </tr>
+    <tr>
+      <td>Male</td>
+      <td>157890</td>
+    </tr>
+  </tbody>
+</table></section>
+<section><h2>Revenue by Category</h2><table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>category</th>
+      <th>purchase_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Clothing</td>
+      <td>104264</td>
+    </tr>
+    <tr>
+      <td>Accessories</td>
+      <td>74200</td>
+    </tr>
+    <tr>
+      <td>Footwear</td>
+      <td>36093</td>
+    </tr>
+    <tr>
+      <td>Outerwear</td>
+      <td>18524</td>
+    </tr>
+  </tbody>
+</table></section>
+<section><h2>Revenue by Season</h2><table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>season</th>
+      <th>purchase_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Fall</td>
+      <td>60018</td>
+    </tr>
+    <tr>
+      <td>Spring</td>
+      <td>58679</td>
+    </tr>
+    <tr>
+      <td>Winter</td>
+      <td>58607</td>
+    </tr>
+    <tr>
+      <td>Summer</td>
+      <td>55777</td>
+    </tr>
+  </tbody>
+</table></section>
+<section><h2>Discount Impact</h2><table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>discount_applied</th>
+      <th>customers</th>
+      <th>revenue</th>
+      <th>avg_order_value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>No</td>
+      <td>2223</td>
+      <td>133670</td>
+      <td>60.13</td>
+    </tr>
+    <tr>
+      <td>Yes</td>
+      <td>1677</td>
+      <td>99411</td>
+      <td>59.28</td>
+    </tr>
+  </tbody>
+</table></section>
+<section><h2>Top 10 Locations</h2><table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>location</th>
+      <th>purchase_amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Montana</td>
+      <td>5784</td>
+    </tr>
+    <tr>
+      <td>Illinois</td>
+      <td>5617</td>
+    </tr>
+    <tr>
+      <td>California</td>
+      <td>5605</td>
+    </tr>
+    <tr>
+      <td>Idaho</td>
+      <td>5587</td>
+    </tr>
+    <tr>
+      <td>Nevada</td>
+      <td>5514</td>
+    </tr>
+    <tr>
+      <td>Alabama</td>
+      <td>5261</td>
+    </tr>
+    <tr>
+      <td>New York</td>
+      <td>5257</td>
+    </tr>
+    <tr>
+      <td>North Dakota</td>
+      <td>5220</td>
+    </tr>
+    <tr>
+      <td>West Virginia</td>
+      <td>5174</td>
+    </tr>
+    <tr>
+      <td>Nebraska</td>
+      <td>5172</td>
+    </tr>
+  </tbody>
+</table></section>
+    </body>
+    </html>
+    

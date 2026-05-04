@@ -1,0 +1,11 @@
+,age,purchase_amount,review_rating,previous_purchases,purchase_frequency_days,estimated_annual_orders,estimated_customer_lifetime_value,is_subscriber,used_discount,churn_risk_flag
+age,1.0,-0.01,-0.024,0.04,0.017,-0.001,0.012,0.006,0.004,0.01
+purchase_amount,-0.01,1.0,0.03,0.008,0.01,-0.013,0.575,-0.007,-0.018,0.003
+review_rating,-0.024,0.03,1.0,0.004,0.004,-0.003,0.015,-0.002,-0.012,0.006
+previous_purchases,0.04,0.008,0.004,1.0,-0.017,0.004,0.506,0.031,0.024,-0.384
+purchase_frequency_days,0.017,0.01,0.004,-0.017,1.0,-0.599,-0.349,0.003,-0.01,0.351
+estimated_annual_orders,-0.001,-0.013,-0.003,0.004,-0.599,1.0,0.567,0.017,0.004,-0.382
+estimated_customer_lifetime_value,0.012,0.575,0.015,0.506,-0.349,0.567,1.0,0.02,0.003,-0.41
+is_subscriber,0.006,-0.007,-0.002,0.031,0.003,0.017,0.02,1.0,0.7,-0.269
+used_discount,0.004,-0.018,-0.012,0.024,-0.01,0.004,0.003,0.7,1.0,-0.173
+churn_risk_flag,0.01,0.003,0.006,-0.384,0.351,-0.382,-0.41,-0.269,-0.173,1.0

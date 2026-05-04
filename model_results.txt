@@ -1,0 +1,16 @@
+Customer Shopping Behavior Analysis - Model Results
+
+High-value customer classifier accuracy: 0.813
+High-value customer classifier ROC AUC: 0.884
+Purchase amount regression MAE: $20.78
+Purchase amount regression R2: -0.034
+
+Classification report:
+              precision    recall  f1-score   support
+
+           0       0.90      0.84      0.87       731
+           1       0.61      0.73      0.66       244
+
+    accuracy                           0.81       975
+   macro avg       0.75      0.79      0.77       975
+weighted avg       0.83      0.81      0.82       975

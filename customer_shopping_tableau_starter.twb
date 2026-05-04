@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<workbook version='2024.1' source-build='2024.1.0'>
+  <document-format-change-manifest />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+  </preferences>
+  <datasources>
+    <datasource caption='Customer Shopping Dashboard Data' inline='true' name='customer_shopping_dashboard_data' version='2024.1'>
+      <connection class='textscan' directory='C:\Users\saiha\Desktop\project job\customer-shopping-behavior-analysis\dashboard' filename='customer_shopping_dashboard_data.csv' password='' server='' />
+      <column caption='Customer ID' datatype='integer' name='[customer_id]' role='dimension' type='ordinal' />
+      <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+      <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+      <column caption='Season' datatype='string' name='[season]' role='dimension' type='nominal' />
+      <column caption='Location' datatype='string' name='[location]' role='dimension' type='nominal' />
+      <column caption='RFM Segment' datatype='string' name='[rfm_segment]' role='dimension' type='nominal' />
+      <column caption='Subscription Status' datatype='string' name='[subscription_status]' role='dimension' type='nominal' />
+      <column caption='Purchase Amount' datatype='real' name='[purchase_amount]' role='measure' type='quantitative' />
+      <column caption='Estimated CLV' datatype='real' name='[estimated_customer_lifetime_value]' role='measure' type='quantitative' />
+      <column caption='Previous Purchases' datatype='integer' name='[previous_purchases]' role='measure' type='quantitative' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Open Data Source'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Customer Shopping Dashboard Data' name='customer_shopping_dashboard_data' />
+          </datasources>
+        </view>
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Customer Shopping Dashboard Starter'>
+      <style />
+      <zones />
+    </dashboard>
+  </dashboards>
+</workbook>

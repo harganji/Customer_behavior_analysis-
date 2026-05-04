@@ -1,0 +1,5 @@
+rfm_segment,customers,revenue,avg_order_value,avg_estimated_clv,churn_risk_rate
+Champions,596,47941,80.438,5480.918,0.0
+Loyal Growth,1332,88295,66.288,3121.64,0.033
+At Risk,1361,72716,53.428,1585.925,0.215
+Low Engagement,611,24129,39.491,666.412,0.494
