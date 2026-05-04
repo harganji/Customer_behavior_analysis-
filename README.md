@@ -10,6 +10,20 @@ This project analyzes 3,900 customer shopping records to identify revenue driver
 
 Retail teams often know what customers bought, but not which customers are most valuable, which behaviors indicate retention risk, or whether discounts are actually improving performance. This project answers those questions through data cleaning, SQL analysis, segmentation, dashboarding, and predictive modeling.
 
+## Repository Structure
+
+```text
+Customer_behavior_analysis-/
+  data/
+  src/
+  sql/
+  dashboard/
+  docs/
+  outputs/
+  README.md
+  requirements.txt
+```
+
 ## Key Questions Answered
 
 - Which customer groups generate the most revenue?
@@ -32,22 +46,23 @@ Retail teams often know what customers bought, but not which customers are most 
 
 | File | Purpose |
 | --- | --- |
-| `customer_shopping_behavior.csv` | Source dataset |
-| `advanced_customer_analysis.py` | Python cleaning, feature engineering, analysis, and ML |
-| `advanced_customer_behavior_analysis.sql` | Advanced SQL analysis queries |
-| `mysql_load_cleaned_data.sql` | MySQL validation/loading helper |
-| `customer_shopping_dashboard.png` | Dashboard image preview |
-| `customer_shopping_dashboard.html` | Browser-viewable dashboard preview |
-| `customer_shopping_tableau_starter.twb` | Tableau starter workbook |
-| `customer_shopping_dashboard_data.csv` | Dashboard-ready cleaned data |
-| `power_bi_dashboard_blueprint.md` | Power BI dashboard design plan |
-| `power_bi_pbix_creation_steps.md` | Steps to create the `.pbix` in Power BI Desktop |
-| `visualization_guide_powerbi_tableau.md` | Power BI/Tableau build guide |
-| `business_problem_and_story.md` | Business framing and story |
-| `business_recommendations.md` | Actionable recommendations |
-| `final_project_summary.md` | Interview-ready project summary |
-| `gender_revenue.csv`, `category_insights.csv`, `discount_impact.csv`, `rfm_segment_summary.csv`, `correlation_matrix.csv` | Output tables |
-| `model_results.txt` | Machine learning model results |
+| [`data/customer_shopping_behavior.csv`](data/customer_shopping_behavior.csv) | Source dataset |
+| [`src/advanced_customer_analysis.py`](src/advanced_customer_analysis.py) | Python cleaning, feature engineering, analysis, and ML |
+| [`src/create_dashboard_visuals.py`](src/create_dashboard_visuals.py) | Generates dashboard PNG/HTML previews |
+| [`src/create_bi_workbook_assets.py`](src/create_bi_workbook_assets.py) | Generates Tableau-ready workbook/data assets |
+| [`sql/advanced_customer_behavior_analysis.sql`](sql/advanced_customer_behavior_analysis.sql) | Advanced SQL analysis queries |
+| [`sql/mysql_load_cleaned_data.sql`](sql/mysql_load_cleaned_data.sql) | MySQL validation/loading helper |
+| [`dashboard/customer_shopping_dashboard.png`](dashboard/customer_shopping_dashboard.png) | Dashboard image preview |
+| [`dashboard/customer_shopping_dashboard.html`](dashboard/customer_shopping_dashboard.html) | Browser-viewable dashboard preview |
+| [`dashboard/customer_shopping_tableau_starter.twb`](dashboard/customer_shopping_tableau_starter.twb) | Tableau starter workbook |
+| [`dashboard/customer_shopping_dashboard_data.csv`](dashboard/customer_shopping_dashboard_data.csv) | Dashboard-ready cleaned data |
+| [`dashboard/power_bi_dashboard_blueprint.md`](dashboard/power_bi_dashboard_blueprint.md) | Power BI dashboard design plan |
+| [`dashboard/power_bi_pbix_creation_steps.md`](dashboard/power_bi_pbix_creation_steps.md) | Steps to create the `.pbix` in Power BI Desktop |
+| [`dashboard/visualization_guide_powerbi_tableau.md`](dashboard/visualization_guide_powerbi_tableau.md) | Power BI/Tableau build guide |
+| [`docs/business_problem_and_story.md`](docs/business_problem_and_story.md) | Business framing and story |
+| [`docs/business_recommendations.md`](docs/business_recommendations.md) | Actionable recommendations |
+| [`docs/final_project_summary.md`](docs/final_project_summary.md) | Interview-ready project summary |
+| [`outputs/`](outputs/) | Generated analysis outputs |
 
 ## Data Preparation
 
@@ -64,31 +79,12 @@ The Python workflow performs these steps:
 
 ## Advanced SQL Analysis
 
-The SQL work includes:
-
-- Revenue by gender, category, season, location, and payment method
-- Window functions for category, item, and location rankings
-- RFM segmentation using `NTILE`
-- CLV proxy analysis by age group and gender
-- Discount impact analysis
-- Churn-risk proxy analysis
-- Cohort-style behavior by age group and purchase frequency
-- Subscription conversion opportunity list
+The SQL work includes revenue analysis, window functions, RFM segmentation, CLV proxy analysis, discount impact, churn-risk analysis, cohort-style behavior, and subscription conversion opportunities.
 
 ## Python and Machine Learning
 
-The Python analysis includes:
-
-- Feature engineering
-- Business summary tables
-- Correlation analysis
-- RFM segmentation
-- Estimated CLV analysis
 - RandomForest classifier for high-value customer prediction
 - RandomForest regressor for purchase amount estimation
-
-Model results:
-
 - High-value customer classifier ROC AUC: `0.884`
 - Purchase amount model MAE: `$20.78`
 
@@ -98,11 +94,11 @@ This repository includes Tableau-ready dashboard assets and an HTML/PNG dashboar
 
 Dashboard preview files:
 
-- [Customer Shopping Dashboard PNG](customer_shopping_dashboard.png)
-- [Customer Shopping Dashboard HTML](customer_shopping_dashboard.html)
-- [Tableau Starter Workbook](customer_shopping_tableau_starter.twb)
-- [Dashboard Data CSV](customer_shopping_dashboard_data.csv)
-- [Power BI PBIX Creation Steps](power_bi_pbix_creation_steps.md)
+- [Customer Shopping Dashboard PNG](dashboard/customer_shopping_dashboard.png)
+- [Customer Shopping Dashboard HTML](dashboard/customer_shopping_dashboard.html)
+- [Tableau Starter Workbook](dashboard/customer_shopping_tableau_starter.twb)
+- [Dashboard Data CSV](dashboard/customer_shopping_dashboard_data.csv)
+- [Power BI PBIX Creation Steps](dashboard/power_bi_pbix_creation_steps.md)
 
 ## Key Findings
 
@@ -124,16 +120,9 @@ Dashboard preview files:
 
 ## How to Run
 
-Install dependencies:
-
 ```bash
 pip install -r requirements.txt
-```
-
-Run the Python analysis:
-
-```bash
-python advanced_customer_analysis.py
+python src/advanced_customer_analysis.py
 ```
 
 Run the SQL analysis in MySQL Workbench after loading the cleaned data into:
